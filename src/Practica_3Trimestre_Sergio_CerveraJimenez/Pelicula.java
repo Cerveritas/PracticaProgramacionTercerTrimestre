@@ -8,6 +8,8 @@ public class Pelicula {
     protected Genero genero;
     protected int Estreno;
 
+
+    /** CONSTRUCTOR POR DEFECTO **/
     public Pelicula(){
 
     }
@@ -20,6 +22,8 @@ public class Pelicula {
         this.genero = genero;
         Estreno = estreno;
     }
+
+
 
 
     /** GETTERS AND SETTERS **/
@@ -57,16 +61,13 @@ public class Pelicula {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "Id=" + Id +
+                ", Titulo='" + Titulo + '\'' +
+                ", genero=" + genero +
+                ", Estreno=" + Estreno +
+                '}';
+    }
 }

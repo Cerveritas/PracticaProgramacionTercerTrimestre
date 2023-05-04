@@ -13,21 +13,11 @@ public interface PeliculasInterface {
 
     public void crearPelicula(Pelicula pelicula) throws SQLException;
 
-    public void eliminarPelicula(int id);
+    public void eliminarPelicula(int id) throws SQLException;
 
-    public Pelicula buscarPelicula(int id);
+    public Pelicula buscarPelicula(int id) throws SQLException;
 
-    ArrayList<Pelicula> buscarTodo();
+    ArrayList<Pelicula> buscarTodo() throws SQLException;
 
-    ArrayList<Pelicula> buscarPorGeneroEstreno(int estreno, String genero);
-
-
-
-
-
-
-
-
-
-
+    ArrayList<Pelicula> buscarPorGeneroEstreno(int estreno, String genero) throws SQLException;
 }
