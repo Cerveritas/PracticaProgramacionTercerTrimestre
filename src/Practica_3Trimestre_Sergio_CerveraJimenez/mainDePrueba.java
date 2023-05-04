@@ -141,8 +141,5 @@ public class mainDePrueba {
                             "el trabajo es mas 'bonito de ver a los ojos.' ");
         System.out.println(" ");
         System.out.println("ESPERO QUE GUSTE!!!");
-
-
-
     }
 }
