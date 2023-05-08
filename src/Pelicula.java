@@ -1,5 +1,3 @@
-package Practica_3Trimestre_Sergio_CerveraJimenez;
-
 public class Pelicula {
 
     /** ATRIBUTOS **/

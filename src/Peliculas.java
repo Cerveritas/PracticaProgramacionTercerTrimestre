@@ -1,5 +1,3 @@
-package Practica_3Trimestre_Sergio_CerveraJimenez;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,7 +14,7 @@ public class Peliculas implements PeliculasInterface {
 
     static {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practica3", "root", "Myandroidop5");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/practica3", "root", "admin");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

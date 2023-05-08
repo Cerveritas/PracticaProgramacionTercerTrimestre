@@ -1,5 +1,3 @@
-package Practica_3Trimestre_Sergio_CerveraJimenez;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 
