@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class mainDePrueba {
+public class main {
 
     // DECLARACION DE MI ESQUEMA DE COLORES
     public static final String ANSI_BLACK = "\u001B[30m";
