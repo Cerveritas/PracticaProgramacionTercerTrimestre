@@ -16,14 +16,14 @@ public class Peliculas implements PeliculasInterface {
 
     static {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practica3", "root", "admin");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practica3", "root", "Myandroidop5");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
 
-    // METODO PARA CREAR LA TABLA (PelÍcula ) EN MYSQLWORKBENCH
+    // METODO PARA CREAR LA TABLA (Película ) EN MYSQLWORKBENCH
     public void crearTabla() throws SQLException {
         query = "create table Pelicula (" +
                 "id int primary key, " +
@@ -117,9 +117,9 @@ public class Peliculas implements PeliculasInterface {
             Pelicula pq = new Pelicula(p.Id, p.Titulo, p.genero, p.Estreno);
             peliculas.add(pq);
 
+            System.out.println(pq.toString());
 
         }
-        System.out.println(peliculas.toString());
 
         return peliculas;
     }
