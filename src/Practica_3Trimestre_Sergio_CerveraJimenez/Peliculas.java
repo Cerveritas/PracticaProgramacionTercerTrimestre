@@ -16,7 +16,7 @@ public class Peliculas implements PeliculasInterface {
 
     static {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practica3", "root", "Myandroidop5");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practica3", "root", "admin");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -125,12 +125,12 @@ public class Peliculas implements PeliculasInterface {
     }
 
 
-    // METODO QUE IMPRIME POR PANTALLA LAS PELICULAS SEGUN EL GÉNERO Y POR ORDEN ASCENDENTE
-    public ArrayList<Pelicula> buscarPorGeneroEstreno(int estreno, String genero) throws SQLException {
+    // METODO QUE IMPRIME POR PANTALLA LAS PELICULAS SEGUN EL GÉNERO Y POR ORDEN DESCENDENTE
+    public ArrayList<Pelicula> buscarPorGeneroOrdenarEstreno(int estreno, String genero) throws SQLException {
 
         ArrayList<Pelicula> peliculas = new ArrayList<>();
 
-        PreparedStatement ps = conn.prepareStatement("select * from pelicula where género = ? order by estreno ASC" );
+        PreparedStatement ps = conn.prepareStatement("select * from pelicula where género = ? order by estreno DESC" );
         System.out.println("Introduzca el GÉNERO de la pelicula que desea buscar");
         genero = sc.next();
 

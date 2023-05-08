@@ -33,7 +33,6 @@ public class mainDePrueba {
         do {
             System.out.println(ANSI_CYAN+"------------------------------------------------------------------------------﹁");
             System.out.println("Pulse:                                                                        |");
-            System.out.println("10 - ...INFORMACION...                                                        |");
             System.out.println("0 - Salir Del Programa                                                        |");
             System.out.println("1 - Crear Tabla Película                                                      |");
             System.out.println("2 - Eliminar Tabla Película                                                   |");
@@ -110,11 +109,7 @@ public class mainDePrueba {
                     break;
 
                 case 7:
-                    pel.buscarPorGeneroEstreno(pelicula.Estreno, String.valueOf(pelicula.genero));
-                    break;
-
-                case 10:
-                    informacion();
+                    pel.buscarPorGeneroOrdenarEstreno(pelicula.Estreno, String.valueOf(pelicula.genero));
                     break;
 
                 default:
@@ -123,23 +118,5 @@ public class mainDePrueba {
                     break;
             }
         } while (opcion != 0);
-    }
-
-
-
-    public static void informacion() {
-
-        System.out.println("Buenas y bienvenid@ a mi programa de Programacion del Tercer Trimestre.");
-        System.out.println(" ");
-        System.out.println("Para una mejor experiencia se recomienda usar la pantalla de la consola \n "+
-                            "lo mas grande posible, ya que de esta manera vamos a aprovechar más los \n "+
-                            "ejemplos de ejecución.");
-        System.out.println(" ");
-        System.out.println("Para mejorar este procedimiento de información avisar que este trabajo \n "+
-                            "ha sido realizado con tiempo de antelación, y para no enviarlo de primeras \n "+
-                            "he decidido tirarme mas tiempo y decorarlo con mas cosas, así, de esta manera, \n "+
-                            "el trabajo es mas 'bonito de ver a los ojos.' ");
-        System.out.println(" ");
-        System.out.println("ESPERO QUE GUSTE!!!");
     }
 }
