@@ -13,9 +13,9 @@ public interface PeliculasInterface {
 
     public void eliminarPelicula(int id) throws SQLException;
 
-    public Pelicula buscarPelicula(int id) throws SQLException;
+    public ArrayList<Pelicula> buscarPelicula(int id) throws SQLException;
 
     ArrayList<Pelicula> buscarTodo() throws SQLException;
 
-    ArrayList<Pelicula> buscarPorGeneroOrdenarEstreno(int estreno, String genero) throws SQLException;
+    ArrayList<Pelicula> buscarPorGeneroOrdenarEstreno(String genero) throws SQLException;
 }

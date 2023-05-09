@@ -80,7 +80,8 @@ public class Peliculas implements PeliculasInterface {
 
 
     // METODO PARA BUSCAR UNA PELICULA POR SU ID
-    public Pelicula buscarPelicula(int id) throws SQLException {
+    public ArrayList<Pelicula> buscarPelicula(int id) throws SQLException {
+        ArrayList<Pelicula> peliculas = new ArrayList<>();
         PreparedStatement ps = conn.prepareStatement("select * from pelicula where id = ?");
         System.out.println("Introduzca el ID de la pelicula que desea buscar");
         id = sc.nextInt();
@@ -90,12 +91,17 @@ public class Peliculas implements PeliculasInterface {
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
-            System.out.println("La pelicula con ID " + rs.getInt(1) +
-                    " es la que contiene el TÍTULO de " + rs.getString(2) +
-                    " con GÉNERO " + rs.getString(3) +
-                    " y con ESTRENO en el año " + rs.getInt(4));
+            p.Id = rs.getInt("id");
+            p.Titulo = rs.getString("título");
+            p.genero = Genero.valueOf(rs.getString("género"));
+            p.Estreno = rs.getInt("estreno");
+
+            Pelicula pq = new Pelicula(p.Id, p.Titulo, p.genero, p.Estreno);
+            peliculas.add(pq);
+
+
         }
-        return null;
+        return peliculas;
     }
 
 
@@ -115,7 +121,7 @@ public class Peliculas implements PeliculasInterface {
             Pelicula pq = new Pelicula(p.Id, p.Titulo, p.genero, p.Estreno);
             peliculas.add(pq);
 
-            System.out.println(pq.toString());
+
 
         }
 
@@ -124,7 +130,7 @@ public class Peliculas implements PeliculasInterface {
 
 
     // METODO QUE IMPRIME POR PANTALLA LAS PELICULAS SEGUN EL GÉNERO Y POR ORDEN DESCENDENTE
-    public ArrayList<Pelicula> buscarPorGeneroOrdenarEstreno(int estreno, String genero) throws SQLException {
+    public ArrayList<Pelicula> buscarPorGeneroOrdenarEstreno(String genero) throws SQLException {
 
         ArrayList<Pelicula> peliculas = new ArrayList<>();
 
@@ -137,10 +143,17 @@ public class Peliculas implements PeliculasInterface {
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
-            System.out.println("La pelicula con ID " + rs.getInt(1) +
-                    " es la que contiene el TÍTULO de " + rs.getString(2) +
-                    " con GÉNERO " + rs.getString(3) +
-                    " y con ESTRENO en el año " + rs.getInt(4));
+            p.Id = rs.getInt("id");
+            p.Titulo = rs.getString("título");
+            p.genero = Genero.valueOf(rs.getString("género"));
+            p.Estreno = rs.getInt("estreno");
+
+            Pelicula pq = new Pelicula(p.getId(), p.getTitulo(), p.getGenero(), p.getEstreno());
+            peliculas.add(pq);
+
+
+
+
         }
         return peliculas;
     }

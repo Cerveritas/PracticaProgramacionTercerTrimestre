@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
@@ -98,15 +99,16 @@ public class main {
                     break;
 
                 case 5:
-                    pel.buscarPelicula(pelicula.Id);
+                    imprimir_arraylist(pel.buscarPelicula(pelicula.Id));
                     break;
 
                 case 6:
-                    pel.buscarTodo();
+                    imprimir_arraylist(pel.buscarTodo());
+
                     break;
 
                 case 7:
-                    pel.buscarPorGeneroOrdenarEstreno(pelicula.Estreno, String.valueOf(pelicula.genero));
+                    imprimir_arraylist(pel.buscarPorGeneroOrdenarEstreno(String.valueOf(pelicula.genero)));
                     break;
 
                 default:
@@ -116,4 +118,11 @@ public class main {
             }
         } while (opcion != 0);
     }
+    private static void imprimir_arraylist(ArrayList<Pelicula> listado_peliculas) {
+
+        for (int i = 0; i < listado_peliculas.size() ; i++){
+            System.out.println(listado_peliculas.get(i));
+        }
+    }
+
 }
